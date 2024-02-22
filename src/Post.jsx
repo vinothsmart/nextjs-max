@@ -1,14 +1,16 @@
-const names = ["vinothkanna", "samarjithraja"];
-
-const Post = () => {
-  const chosenName = Math.random() > 0.5 ? names[0] : names[1];
+import PropTypes from "prop-types";
+const Post = ({ author, text }) => {
   return (
     <>
-      <h1>Hi {chosenName}</h1>
-      <h1>React is Awesome</h1>
-      <h2>It is a JavaScript library</h2>
+      <p>{author}</p>
+      <p>{text}</p>
     </>
   );
+};
+
+Post.propTypes = {
+  author: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 export default Post;
